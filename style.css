@@ -1,0 +1,39 @@
+/* * {
+    border: solid red 0.1px; 
+} */
+
+/* ************************************************* */
+
+body {
+  background-color: #f8f9fa;
+}
+
+/* sugerencias de búsqueda, se esconde si está vacía */
+.list-group:empty {
+  display: none;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+/* sprite del pokemon */
+.pokemon-sprite {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+}
+
+/* efecto de que ha sido atacado */
+.atacado {
+  animation: parpadeo-rojo 0.25s steps(1, end) 5;
+}
+
+@keyframes parpadeo-rojo {
+  0%, 100% {
+    outline: 4px solid transparent;
+  }
+  50% {
+    outline: 4px solid #dc3545;
+  }
+}
