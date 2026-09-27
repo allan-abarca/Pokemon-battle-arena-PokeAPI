@@ -279,15 +279,14 @@ async function seleccionarPokemon(nombre, numeroJugador) {
  
     mostrarInfoPokemon(pokemon, contenedor);
   } catch (error) {
-    // si hubo error, ese jugador se queda SIN Pokémon válido,
-    // aunque antes ya tuviera uno cargado (por eso lo ponemos en null)
+    // en caso de error, ese jugador se queda sin pokemon válido, aunque antes ya tuviera uno cargado
     if (numeroJugador === 1) {
       pokemonJugador1 = null;
     } else {
       pokemonJugador2 = null;
     }
  
-    // distinguimos el tipo de error para dar un mensaje más útil
+    // diferenciar el tipo de error
     if (error.message === "Pokémon no encontrado") {
       mostrarError(contenedor, "No se encontró ese Pokémon. Intenta con otro nombre.");
     } else {
